@@ -1,0 +1,34 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "CreateStudent";
+}
+
+<h1>Create Student</h1>
+<form method="post" asp-action="CreateStudent">
+    <table class="table table-bordered">
+        <tr>
+            <td>Studebt Number</td>
+            <td><input asp-for="Id" class="form-control" /> </td>
+        </tr>
+        <tr>
+            <td>Studebt Name</td>
+            <td><input asp-for="Name" class="form-control" /> </td>
+        </tr>
+        <tr>
+            <td>Studebt City</td>
+            <td><input asp-for="City" class="form-control" /> </td>
+        </tr>
+        <tr>
+            <td>Studebt Age</td>
+            <td><input asp-for="Age" class="form-control" /> </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="name" value="Create" class="btn btn-secondary" />
+                <a asp-action="AllStudents" asp-controller="University" class="btn btn-danger">Cancel</a>
+            </td>
+        </tr>
+
+    </table>
+</form>
+

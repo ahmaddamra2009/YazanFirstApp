@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Student>
+@{
+    ViewData["Title"] = "AllStudents";
+}
+
+<h1>All Students 2020</h1>
+<a asp-action="CreateStudent" asp-controller="University" class="btn btn-success">Add New Student</a>
+<table class="table table-bordered table-hover">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>City</td>
+        <td>Oprations</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.City</td>
+            <td>
+                <a asp-action="StudentDetails" asp-controller="University" class="btn btn-primary">More Details</a>
+                <a asp-action="DeleteStudent" asp-route-id="@item.Id" asp-controller="University" class="btn btn-danger">Delete</a>
+
+            </td>
+        </tr>
+    }
+</table>
